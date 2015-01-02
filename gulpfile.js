@@ -1,12 +1,10 @@
 'use strict';
 
 var gulp = require('gulp');
-var minifycss = require('gulp-minify-css');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 
 var $ = require('gulp-load-plugins')();
-
 
 gulp.task('connect', function () {
     var connect = require('connect');
@@ -27,13 +25,11 @@ gulp.task('serve', ['connect'], function () {
     require('opn')('http://localhost:9000');
 });
 
-
-
 gulp.task('styles', function () {
     return gulp.src('app/sass/**/*.scss')
         .pipe($.sass({errLogToConsole: true}))
         .pipe($.autoprefixer('last 1 version'))
-        .pipe(minifycss())
+        .pipe($.minifyCss())
         .pipe(gulp.dest('app/styles'))
         .pipe(reload({stream:true}))
 //        .pipe($.notify("Compilation complete."))
