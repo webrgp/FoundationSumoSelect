@@ -4,14 +4,14 @@
 
 After cloning locally, go inside the repository in the terminal. Then type the following command:
 
-```bash
+```
 $ npm install
 $ bower update
 ```
 
 After the downloading the packages, you can test the plugin by typing:
 
-```bash
+```
 $ gulp watch
 ```
 
@@ -19,14 +19,14 @@ That will open your browser with the demo.
 
 ### Usage
 
-To use it inside your application, add the ```sumoselect.css``` after foundation, in your html:
+To use it inside your application, add the `sumoselect.css` after foundation, in your html:
 
 ```html
 <link rel="stylesheet" href="foundation.min.css"/>
 <link rel="stylesheet" href="sumoselect.css"/>
 ```
 
-and the ```jquery.sumoselect.js``` after the ```jQuery``` and ```Foundation```:
+and the `jquery.sumoselect.js` after the `jQuery` and `Foundation`:
 
 ```html
 <script src="jquery.min.js"></script>
