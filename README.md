@@ -2,6 +2,11 @@
 
 ### Getting Started
 
+*Requirements:*
+* [Node](http://nodejs.org/)
+* [Bower](http://bower.io/)
+* [Gulp](http://gulpjs.com/)
+
 After cloning locally, go inside the repository in the terminal. Then type the following command:
 
 ```
