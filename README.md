@@ -4,14 +4,14 @@
 
 After cloning locally, go inside the repository in the terminal. Then type the following command:
 
-```
+```bash
 $ npm install
 $ bower update
 ```
 
 After the downloading the packages, you can test the plugin by typing:
 
-```
+```bash
 $ gulp watch
 ```
 
