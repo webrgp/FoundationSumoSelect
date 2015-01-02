@@ -1,0 +1,190 @@
+.SlectBox, .SlectBoxa {
+  display: block;
+  padding: 5px; }
+
+/*this is applied on that hidden select. DO NOT USE display:none; or visiblity:hidden; and Do not override any of these properties. */
+.SelectClass {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 100%;
+  width: 100%;
+  border: none;
+  z-index: 1;
+  box-sizing: border-box;
+  filter: alpha(opacity=0);
+  opacity: 0; }
+
+.SumoSelect {
+  display: block;
+  position: relative; }
+  .SumoSelect > .optWrapper {
+    top: 30px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+    box-sizing: border-box;
+    z-index: -100;
+    background: #fff;
+    border: 1px solid #ddd; }
+    .SumoSelect > .optWrapper > .options {
+      list-style: none;
+      display: block;
+      padding: 0px;
+      margin: 0px;
+      overflow: auto;
+      max-height: 250px; }
+      .SumoSelect > .optWrapper > .options > li {
+        transition: 200ms ease;
+        padding: 4px 6px;
+        border-bottom: 1px solid #F3F3F3;
+        position: relative; }
+        .SumoSelect > .optWrapper > .options > li:last-child {
+          border-bottom: none; }
+        .SumoSelect > .optWrapper > .options > li:hover {
+          background-color: #EEEEEE; }
+        .SumoSelect > .optWrapper > .options > li.disabled {
+          background-color: inherit; }
+          .SumoSelect > .optWrapper > .options > li.disabled * {
+            filter: alpha(opacity=50);
+            opacity: 0.5; }
+        .SumoSelect > .optWrapper > .options > li label {
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          display: block; }
+        .SumoSelect > .optWrapper > .options > li span {
+          display: none; }
+    .SumoSelect > .optWrapper > .MultiControls {
+      display: none;
+      border-top: 1px solid #ddd;
+      background-color: #fff;
+      box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.13); }
+    .SumoSelect > .optWrapper.open {
+      top: 40px;
+      visibility: visible;
+      opacity: 1;
+      z-index: 1000; }
+    .SumoSelect > .optWrapper.isFloating {
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      width: 90%;
+      bottom: 0px;
+      margin: auto;
+      max-height: 90%; }
+      .SumoSelect > .optWrapper.isFloating > .options {
+        max-height: 100%; }
+        .SumoSelect > .optWrapper.isFloating > .options > li {
+          padding: 12px 6px; }
+    .SumoSelect > .optWrapper.multiple > .options > li {
+      padding-left: 35px; }
+      .SumoSelect > .optWrapper.multiple > .options > li span {
+        position: absolute;
+        display: block;
+        width: 30px;
+        top: 0px;
+        left: 0px;
+        bottom: 0px; }
+        .SumoSelect > .optWrapper.multiple > .options > li span i {
+          border: 1px solid black;
+          background-image: none;
+          background-size: 14px 14px;
+          position: absolute;
+          margin: auto;
+          left: 0px;
+          right: 0px;
+          top: 0px;
+          bottom: 0px;
+          background-repeat: no-repeat;
+          background-position: center center;
+          width: 16px;
+          height: 16px; }
+      .SumoSelect > .optWrapper.multiple > .options > li.selected span i {
+        background-image: url("../img/check.png"); }
+    .SumoSelect > .optWrapper.multiple > .MultiControls > .anchorWrapper {
+      display: block; }
+      .SumoSelect > .optWrapper.multiple > .MultiControls > .anchorWrapper a {
+        padding: 5px; }
+    .SumoSelect > .optWrapper.multiple > .MultiControls button {
+      width: 50%;
+      margin-bottom: 0px; }
+    .SumoSelect > .optWrapper.multiple.isFloating {
+      padding-bottom: 43px; }
+      .SumoSelect > .optWrapper.multiple.isFloating > .options > li {
+        padding-left: 35px; }
+      .SumoSelect > .optWrapper.multiple.isFloating > .MultiControls {
+        display: block;
+        margin-top: 0px;
+        position: relative;
+        bottom: 0px;
+        width: 100%; }
+    .SumoSelect > .optWrapper.multiple.okCancelInMulti > .MultiControls {
+      display: block; }
+      .SumoSelect > .optWrapper.multiple.okCancelInMulti > .MultiControls > p {
+        padding: 6px; }
+  .SumoSelect > .CaptionCont {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: relative;
+    border: 1px solid;
+    border-color: #ccc;
+    min-height: 20px;
+    background-color: #FAFAFA; }
+    .SumoSelect > .CaptionCont > span {
+      display: block;
+      padding-right: 30px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden; }
+      .SumoSelect > .CaptionCont > span.placeholder {
+        color: #ccc;
+        font-style: italic; }
+    .SumoSelect > .CaptionCont > label {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      width: 30px; }
+      .SumoSelect > .CaptionCont > label > i {
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+");
+        background-repeat: no-repeat;
+        background-position: center center;
+        width: 16px;
+        height: 16px;
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        margin: auto; }
+  .SumoSelect.disabled {
+    opacity: 0.7; }
+    .SumoSelect.disabled > .CaptionCont > label {
+      background-color: #F1F1F1; }
+  .SumoSelect:hover > .CaptionCont {
+    background-color: #f3f3f3;
+    border-color: #999999; }
+
+/*Background overlay*/
+body > .BackdropSelect {
+  display: none;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  z-index: 100; }

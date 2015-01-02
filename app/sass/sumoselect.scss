@@ -1,0 +1,278 @@
+.SlectBox, .SlectBoxa {
+  display: block;
+  padding: 5px;
+}
+
+/*this is applied on that hidden select. DO NOT USE display:none; or visiblity:hidden; and Do not override any of these properties. */
+.SelectClass {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 100%;
+  width: 100%;
+  border: none;
+  z-index: 1;
+  box-sizing: border-box;
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+
+.SumoSelect {
+
+  display: block;
+  position: relative;
+
+  > .optWrapper {
+    top: 30px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+    box-sizing: border-box;
+    z-index: -100;
+    background: #fff;
+    border: 1px solid #ddd;
+
+    > .options {
+      list-style: none;
+      display: block;
+      padding: 0px;
+      margin: 0px;
+      overflow: auto;
+      max-height: 250px;
+
+      > li {
+        transition: 200ms ease;
+
+        padding: 4px 6px;
+        border-bottom: 1px solid #F3F3F3;
+        position: relative;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        &:hover {
+          background-color: #EEEEEE;
+        }
+
+        &.disabled {
+          background-color: inherit;
+
+          * {
+            filter: alpha(opacity=50);
+            opacity: 0.5;
+          }
+        }
+
+        label {
+          user-select: none;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          display: block;
+        }
+
+        span {
+          display: none;
+        }
+      }
+    }
+
+    > .MultiControls {
+      display: none;
+      border-top: 1px solid #ddd;
+      background-color: #fff;
+      box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.13);
+    }
+
+    &.open {
+      top: 40px;
+      visibility: visible;
+      opacity: 1;
+      z-index: 1000;
+    }
+
+    &.isFloating {
+
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      width: 90%;
+      bottom: 0px;
+      margin: auto;
+      max-height: 90%;
+
+      > .options {
+        max-height: 100%;
+
+        > li {
+          padding: 12px 6px;
+        }
+      }
+    }
+
+    &.multiple {
+      > .options {
+        > li {
+          padding-left: 35px;
+
+          span {
+            position: absolute;
+            display: block;
+            width: 30px;
+            top: 0px;
+            left: 0px;
+            bottom: 0px;
+
+            i {
+              border: 1px solid black;
+              background-image: none;
+              background-size: 14px 14px;
+              position: absolute;
+              margin: auto;
+              left: 0px;
+              right: 0px;
+              top: 0px;
+              bottom: 0px;
+              background-repeat: no-repeat;
+              background-position: center center;
+              width: 16px;
+              height: 16px;
+            }
+          }
+
+          &.selected {
+            span {
+              i {
+                background-image: url("../img/check.png");
+              }
+            }
+          }
+        }
+      }
+
+      > .MultiControls {
+        > .anchorWrapper {
+          display: block;
+          a {
+            padding: 5px;
+          }
+        }
+
+        button {
+          width: 50%;
+          margin-bottom: 0px;
+        }
+      }
+
+      &.isFloating {
+
+        padding-bottom: 43px;
+
+        > .options {
+          > li {
+            padding-left: 35px;
+          }
+        }
+
+        > .MultiControls {
+          display: block;
+          margin-top: 0px;
+          position: relative;
+          bottom: 0px;
+          width: 100%;
+        }
+      }
+
+      &.okCancelInMulti {
+        > .MultiControls {
+          display: block;
+
+          > p {
+            padding: 6px;
+          }
+        }
+      }
+    }
+  }
+
+  > .CaptionCont {
+    user-select: none;
+    position: relative;
+    border: 1px solid;
+    border-color: #ccc;
+    min-height: 20px;
+    background-color: #FAFAFA;
+
+    > span {
+      display: block;
+      padding-right: 30px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+
+      &.placeholder {
+        color: #ccc;
+        font-style: italic;
+      }
+    }
+
+    > label {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      width: 30px;
+
+      > i {
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+");
+        background-repeat: no-repeat;
+        background-position: center center;
+        width: 16px;
+        height: 16px;
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        margin: auto;
+      }
+    }
+  }
+
+  &.disabled {
+    opacity: 0.7;
+
+    > .CaptionCont {
+      > label {
+        background-color: #F1F1F1;
+      }
+    }
+  }
+
+  &:hover {
+    > .CaptionCont {
+      background-color: #f3f3f3;
+      border-color: #999999;
+    }
+  }
+}
+
+
+/*Background overlay*/
+body > .BackdropSelect {
+  display: none;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  z-index: 100;
+}
