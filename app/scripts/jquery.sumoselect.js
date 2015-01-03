@@ -207,7 +207,7 @@
             O.hideOpts();
           });
 
-          var cancelBtn = $('<button class="button secondary">Cancel</button>').click(function (e) {
+          var cancelBtn = $('<button class="button">Cancel</button>').click(function (e) {
             e.preventDefault();
             //remove all selections
             O.E.find('option:selected').each( function () {

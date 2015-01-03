@@ -1,6 +1,9 @@
+/* Variables */
+$sans-serif: "Open Sans Condensed", Helvetica, Roboto, sans-serif;
+
 .SlectBox, .SlectBoxa {
   display: block;
-  padding: 5px;
+  padding: 6px;
 }
 
 /*this is applied on that hidden select. DO NOT USE display:none; or visiblity:hidden; and Do not override any of these properties. */
@@ -74,6 +77,8 @@
           white-space: nowrap;
           overflow: hidden;
           display: block;
+          font-family: $sans-serif; 
+          font-weight: 400;
         }
 
         span {
@@ -167,6 +172,9 @@
         button {
           width: 50%;
           margin-bottom: 0px;
+          font-family: $sans-serif;
+          background: #f1f1f1;
+          color: #37403A;
         }
       }
 
@@ -207,7 +215,8 @@
     border: 1px solid;
     border-color: #ccc;
     min-height: 20px;
-    background-color: #FAFAFA;
+    background-color: #FFFFFF;
+    font-size: .875rem;
 
     > span {
       display: block;
@@ -215,6 +224,7 @@
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
+      
 
       &.placeholder {
         color: #ccc;
