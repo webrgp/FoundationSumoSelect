@@ -77,7 +77,7 @@ $sans-serif: "Open Sans Condensed", Helvetica, Roboto, sans-serif;
           white-space: nowrap;
           overflow: hidden;
           display: block;
-          font-family: $sans-serif; 
+          font-family: $sans-serif;
           font-weight: 400;
         }
 
@@ -135,26 +135,34 @@ $sans-serif: "Open Sans Condensed", Helvetica, Roboto, sans-serif;
             bottom: 0px;
 
             i {
-              border: 1px solid black;
-              background-image: none;
-              background-size: 14px 14px;
-              position: absolute;
-              margin: auto;
-              left: 0px;
-              right: 0px;
-              top: 0px;
-              bottom: 0px;
-              background-repeat: no-repeat;
-              background-position: center center;
-              width: 16px;
-              height: 16px;
+              display: inline-block;
+              font: normal normal normal 14px/1 FontAwesome;
+              text-rendering: auto;
+              -webkit-font-smoothing: antialiased;
+              -moz-osx-font-smoothing: grayscale;
+
+              &:before {
+                content: "";
+                font-size: 14px;
+                border: 1px solid black;
+                position: absolute;
+                margin: auto;
+                left: 0px;
+                right: 0px;
+                top: 0px;
+                bottom: 0px;
+                width: 16px;
+                height: 16px;
+              }
             }
           }
 
           &.selected {
             span {
               i {
-                background-image: url("../img/check.png");
+                &:before {
+                  content: "\f00c";
+                }
               }
             }
           }
