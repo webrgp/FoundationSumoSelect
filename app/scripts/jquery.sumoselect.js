@@ -293,7 +293,7 @@
             if ( typeof li.context.dataset.location !== 'undefined' ) {
               win.location.href = li.data('location');
               return;
-            };
+            }
 
             if (O.isMulti) {
               if ( li.attr('data-val') === 'all') {
