@@ -299,7 +299,7 @@
               if ( li.attr('data-val') === 'all') {
                 li.toggleClass('selected');
 
-                O.E.find('option').each(function(index, el) {
+                O.E.find('option:not([data-location])').each(function(index, el) {
 
                   el.selected = li.hasClass('selected');
                   if(!O.mob) {
