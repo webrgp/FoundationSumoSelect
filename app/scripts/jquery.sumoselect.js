@@ -334,23 +334,7 @@
 
         setText: function () {
           var O = this;
-          O.placeholder = '';
-          if (O.isMulti) {
-            var sels = O.E.find(':selected').not(':disabled'); //selected options.
-
-            for (var i = 0; i < sels.length; i++) {
-              if (i >= settings.csvDispCount && settings.csvDispCount) {
-                O.placeholder = settings.captionFormat.replace('{0}', sels.length);
-                break;
-              } else {
-                O.placeholder += $(sels[i]).text() + ', ';
-              }
-            }
-            O.placeholder = O.placeholder.replace(/,([^,]*)$/, '$1'); //remove unexpected "," from last.
-          }
-          else {
-            O.placeholder = O.E.find(':selected').not(':disabled').text();
-          }
+          O.placeholder = O.E.attr('placeholder');
 
           var isPlaceholder = false;
 
@@ -384,6 +368,8 @@
           } else {
             O.caption.removeClass('placeholder');
           }
+
+          O.placeholder = O.E.attr('placeholder');
 
           return O.placeholder;
         },
