@@ -334,7 +334,14 @@
 
         setText: function () {
           var O = this;
-          O.placeholder = O.E.attr('placeholder');
+          if (O.isMulti) {
+            O.placeholder = O.E.attr('placeholder');
+          }
+          else {
+            O.placeholder = '';
+            O.placeholder = O.E.find(':selected').not(':disabled').text();
+          }
+          
 
           var isPlaceholder = false;
 
